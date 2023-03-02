@@ -29,7 +29,6 @@ class NotesHandler {
             response.code(201);
             return response;
         } catch (e) {
-            console.log(e);
             if (e instanceof ClientError) {
                 const response = h.response({
                     status: 'fail',
