@@ -13,7 +13,7 @@ exports.up = pgm => {
 exports.down = pgm => {
     pgm.dropConstraint('notes', 'fk_notes.owner_users.id');
 
-    pgm.sql("UPDATE notes SET owner=NULL WHERE owner='old_notes");
+    pgm.sql("UPDATE notes SET owner=NULL WHERE owner='old_notes'");
 
     pgm.sql("DELETE FROM users WHERE id='old_notes'");
 };
